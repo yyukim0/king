@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZTwlpyhWf40=",
+  "dgSpecHash": "CoLKD5WJvP0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\BIA\\source\\repos\\King-For-a-Day\\ProjetoPi\\ProjetoPi\\ProjetoPi.csproj",
+  "projectFilePath": "C:\\Users\\BIA\\source\\repos\\king\\ProjetoPi\\ProjetoPi\\ProjetoPi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BIA\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\BIA\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

@@ -53,6 +53,8 @@
             lblPedirId = new Label();
             txtRequestId = new TextBox();
             lblSenhaId = new Label();
+            lblResposta = new Label();
+            lblSenhaResposta = new Label();
             SuspendLayout();
             // 
             // textBox1
@@ -69,7 +71,7 @@
             listBox1.ItemHeight = 15;
             listBox1.Location = new Point(260, 90);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(151, 169);
+            listBox1.Size = new Size(179, 169);
             listBox1.TabIndex = 2;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged_1;
             // 
@@ -277,11 +279,31 @@
             lblSenhaId.TabIndex = 24;
             lblSenhaId.Text = "label6";
             // 
+            // lblResposta
+            // 
+            lblResposta.AutoSize = true;
+            lblResposta.Location = new Point(97, 261);
+            lblResposta.Name = "lblResposta";
+            lblResposta.Size = new Size(38, 15);
+            lblResposta.TabIndex = 25;
+            lblResposta.Text = "label6";
+            // 
+            // lblSenhaResposta
+            // 
+            lblSenhaResposta.AutoSize = true;
+            lblSenhaResposta.Location = new Point(155, 262);
+            lblSenhaResposta.Name = "lblSenhaResposta";
+            lblSenhaResposta.Size = new Size(38, 15);
+            lblSenhaResposta.TabIndex = 26;
+            lblSenhaResposta.Text = "label7";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblSenhaResposta);
+            Controls.Add(lblResposta);
             Controls.Add(lblSenhaId);
             Controls.Add(lblPedirId);
             Controls.Add(txtRequestId);
@@ -339,5 +361,7 @@
         private Label lblPedirId;
         private TextBox txtRequestId;
         private Label lblSenhaId;
+        private Label lblResposta;
+        private Label lblSenhaResposta;
     }
 }

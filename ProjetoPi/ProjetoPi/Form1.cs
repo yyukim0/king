@@ -123,10 +123,15 @@ namespace ProjetoPi
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string senha = txtRequestSenha.Text;
             string idJogador = lblSenhaId.Text;
-            idJogador = idJogador.Substring(0, idJogador.IndexOf(','));
+            idJogador = idJogador.Substring(0, 4);
             int idPrincipal = Convert.ToInt32(idJogador);
+            lblResposta.Text = idJogador;
+
+            string senha = lblSenhaId.Text;
+            senha = senha.Substring(5);
+            lblSenhaResposta.Text = senha;
+
 
             Jogo.Iniciar(idPrincipal, senha);
         }
