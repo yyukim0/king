@@ -30,6 +30,7 @@
         {
             button1 = new Button();
             label1 = new Label();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // button1
@@ -53,12 +54,24 @@
             label1.TabIndex = 1;
             label1.Text = "Nenhuma Partida Selecionada";
             // 
+            // textBox1
+            // 
+            textBox1.BackColor = SystemColors.MenuHighlight;
+            textBox1.ForeColor = Color.White;
+            textBox1.Location = new Point(67, 36);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(128, 27);
+            textBox1.TabIndex = 2;
+            textBox1.Text = "Scriptores de Chartres";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.MenuHighlight;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(button1);
             Name = "Form2";
@@ -71,5 +84,6 @@
 
         private Button button1;
         private Label label1;
+        private TextBox textBox1;
     }
 }

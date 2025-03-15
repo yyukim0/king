@@ -18,6 +18,7 @@ namespace ProjetoPi
         {
             InitializeComponent();
             this.versao = Jogo.versao;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,6 +29,11 @@ namespace ProjetoPi
             form.ShowDialog();
 
             label1.Text = form.idPartidaSelecionada.ToString();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
