@@ -1,4 +1,4 @@
-﻿namespace ProjetoPi
+namespace ProjetoPi
 {
     partial class Form1
     {
@@ -55,6 +55,11 @@
             lblSenhaId = new Label();
             lblResposta = new Label();
             lblSenhaResposta = new Label();
+            button6 = new Button();
+            txtRequestIdJogador = new TextBox();
+            label6 = new Label();
+            label7 = new Label();
+            txtRequestSenhaJogador = new TextBox();
             SuspendLayout();
             // 
             // textBox1
@@ -259,9 +264,9 @@
             lblPedirId.AutoSize = true;
             lblPedirId.Location = new Point(605, 32);
             lblPedirId.Name = "lblPedirId";
-            lblPedirId.Size = new Size(65, 15);
+            lblPedirId.Size = new Size(105, 15);
             lblPedirId.TabIndex = 23;
-            lblPedirId.Text = "Digite o ID:";
+            lblPedirId.Text = "Digite o ID da Sala:";
             // 
             // txtRequestId
             // 
@@ -297,11 +302,58 @@
             lblSenhaResposta.TabIndex = 26;
             lblSenhaResposta.Text = "label7";
             // 
+            // button6
+            // 
+            button6.Location = new Point(359, 371);
+            button6.Name = "button6";
+            button6.Size = new Size(102, 37);
+            button6.TabIndex = 27;
+            button6.Text = "Ver Carta";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click_1;
+            // 
+            // txtRequestIdJogador
+            // 
+            txtRequestIdJogador.Location = new Point(60, 385);
+            txtRequestIdJogador.Name = "txtRequestIdJogador";
+            txtRequestIdJogador.Size = new Size(127, 23);
+            txtRequestIdJogador.TabIndex = 28;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(60, 367);
+            label6.Name = "label6";
+            label6.Size = new Size(127, 15);
+            label6.TabIndex = 29;
+            label6.Text = "Digite o ID do Jogador:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(198, 367);
+            label7.Name = "label7";
+            label7.Size = new Size(146, 15);
+            label7.TabIndex = 30;
+            label7.Text = "Digite a senha do Jogador:";
+            // 
+            // txtRequestSenhaJogador
+            // 
+            txtRequestSenhaJogador.Location = new Point(198, 385);
+            txtRequestSenhaJogador.Name = "txtRequestSenhaJogador";
+            txtRequestSenhaJogador.Size = new Size(127, 23);
+            txtRequestSenhaJogador.TabIndex = 31;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtRequestSenhaJogador);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(txtRequestIdJogador);
+            Controls.Add(button6);
             Controls.Add(lblSenhaResposta);
             Controls.Add(lblResposta);
             Controls.Add(lblSenhaId);
@@ -363,5 +415,10 @@
         private Label lblSenhaId;
         private Label lblResposta;
         private Label lblSenhaResposta;
+        private Button button6;
+        private TextBox txtRequestIdJogador;
+        private Label label6;
+        private Label label7;
+        private TextBox txtRequestSenhaJogador;
     }
 }
