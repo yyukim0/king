@@ -20,6 +20,38 @@ namespace ProjetoPi
         {
             InitializeComponent();
             ListarPartidas();
+            ListarPersonagens();
+            ListarSetores();
+        }
+
+        public void ListarSetores()
+        {
+            string retorno = Jogo.ListarSetores();
+
+            retorno = retorno.Replace("\r", "");
+            retorno = retorno.Substring(0, retorno.Length - 1);
+            string[] setores = retorno.Split('\n');
+
+            lstSetores.Items.Clear();
+            for (int i = 0; i < setores.Length - 1; i++)
+            {
+                lstSetores.Items.Add(setores[i]);
+            }
+        }
+
+        public void ListarPersonagens()
+        {
+            string retorno = Jogo.ListarPersonagens();
+
+            retorno = retorno.Replace("\r", "");
+            retorno = retorno.Substring(0, retorno.Length - 1);
+            string[] personagens = retorno.Split('\n');
+
+            lstSetores.Items.Clear();
+            for (int i = 0; i < personagens.Length - 1; i++)
+            {
+                lstPersonagens.Items.Add(personagens[i]);
+            }
         }
 
         public void AtualizarTela()
@@ -123,17 +155,27 @@ namespace ProjetoPi
 
         private void button4_Click(object sender, EventArgs e)
         {
+            int idJogador = MostrarIdJogador();
+            string senha = MostrarSenhaJogador();
+
+            Jogo.Iniciar(idJogador, senha);
+        }
+
+        private string MostrarSenhaJogador()
+        {
+            string senha = lblSenhaId.Text;
+            senha = senha.Substring(5);
+
+            return senha;
+        }
+
+        private int MostrarIdJogador()
+        {
             string idJogador = lblSenhaId.Text;
             idJogador = idJogador.Substring(0, 4);
             int idPrincipal = Convert.ToInt32(idJogador);
-            lblResposta.Text = idJogador;
 
-            string senha = lblSenhaId.Text;
-            senha = senha.Substring(5);
-            lblSenhaResposta.Text = senha;
-
-
-            Jogo.Iniciar(idPrincipal, senha);
+            return idPrincipal;
         }
 
         private void lblPedirNome_Click(object sender, EventArgs e)
@@ -210,6 +252,64 @@ namespace ProjetoPi
         private void lblSenhaId_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lstJogadas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVerificarVez_Click(object sender, EventArgs e)
+        {
+            int idPartida = Convert.ToInt32(txtRequestId.Text);
+            string codigo = Jogo.VerificarVez(idPartida);
+
+            string retorno = Jogo.ListarJogadores(idPartida);
+            retorno = retorno.Replace("\r", "");
+            string[] jogadores = retorno.Split('\n');
+
+            for (int i = 0; i < jogadores.Length; i++)
+            {
+                if (jogadores[i].Substring(0, 4) == codigo)
+                {
+                    string[] nome = jogadores[i].Split(',');
+                    lblNomeJogadorVez.Text = nome[1];
+                }
+                break;
+            }
+
+            lblIdJogadorVez.Text = codigo.Substring(0, 4);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnColocarPersonagem_Click(object sender, EventArgs e)
+        {
+            int setor = Convert.ToInt32(txtRequestSetor.Text);
+            string personagem = txtRequestPersonagem.Text;
+            string senha = MostrarSenhaJogador();
+            int jogador = MostrarIdJogador();
+
+
+            txtTabuleiro.Text = Jogo.ColocarPersonagem(jogador, senha, setor, personagem);
         }
     }
 }
