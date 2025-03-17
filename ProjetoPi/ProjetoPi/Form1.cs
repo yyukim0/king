@@ -270,12 +270,13 @@ namespace ProjetoPi
 
             for (int i = 0; i < jogadores.Length; i++)
             {
-                if (jogadores[i].Substring(0, 4) == codigo)
+                if (jogadores[i].Substring(0, 4) == codigo.Substring(0, 4))
                 {
                     string[] nome = jogadores[i].Split(',');
                     lblNomeJogadorVez.Text = nome[1];
+                    break;
                 }
-                break;
+
             }
 
             lblIdJogadorVez.Text = codigo.Substring(0, 4);
