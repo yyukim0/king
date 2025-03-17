@@ -85,7 +85,7 @@ namespace ProjetoPi
             //lblCartas.Text = Jogo.ListarCartas(Convert.ToInt32(idJogador, senha); //mostra na label das cartas qual a carta do jogador
         }
 
-        //n�o tira esse m�todo
+        //não tira esse método
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -162,6 +162,52 @@ namespace ProjetoPi
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtRequestIdJogador.Text))
+                {
+                    lblCartas.Text = "Digite o ID do jogador";
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(txtRequestSenhaJogador.Text))
+                {
+                    lblCartas.Text = "Digite a senha do jogador";
+                    return;
+                }
+
+                if (!int.TryParse(txtRequestIdJogador.Text, out int jogadorId))
+                {
+                    lblCartas.Text = "ID deve ser um número";
+                    return;
+                }
+
+                string senha = txtRequestSenhaJogador.Text;
+
+                string resultado = KingMeServer.Jogo.ListarCartas(jogadorId, senha);
+
+                if (string.IsNullOrEmpty(resultado))
+                {
+                    lblCartas.Text = "Nenhuma carta encontrada";
+                }
+                else
+                {
+                    lblCartas.Text = resultado;
+                }
+            }
+            catch (Exception ex)
+            {
+                lblCartas.Text = "ERRO: Jogador não encontrado ou senha incorreta";
+            }
+        }
+
+        private void lblSenhaId_Click(object sender, EventArgs e)
         {
 
         }
